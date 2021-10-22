@@ -73,7 +73,7 @@ The call to `pypmi.load_behavior()` may take a few seconds to run&mdash;there's 
 If we want to query the data with regards to diagnosis it might be useful to load in some demographic information:
 
 ```python
->>> demographics = pypmi.load_demographics()
+>>>    
 >>> demographics.columns
 Index(['participant', 'diagnosis', 'date_birth', 'date_diagnosis',
        'date_enroll', 'status', 'family_history', 'age', 'gender', 'race',
