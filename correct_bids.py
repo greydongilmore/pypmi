@@ -259,10 +259,10 @@ def run_command(command):
 #%%
 
 
-
+,'3227','3229','3230','3251','3254','3267'
 missing = 'B0rf Map'
 
-subjects_remove=['100889','100878','101124','101175']
+subjects_remove=['100889','100878','101124','101175','101555','102078','102293','102484','3224']
 
 dataset_path = r'/home/greydon/Documents/datasets/PPMI'
 
@@ -280,6 +280,7 @@ out_dir.mkdir(exist_ok=True)
 
 subjects_, coerce = _prepare_directory(raw_dir, ignore_bad=True,confirm_uids=coerce_study_uids)
 subjects = [x for x in subjects if x not in subjects_remove]
+
 # force consistent study UID if desired
 if coerce_study_uids:
 	for path in coerce:
@@ -292,7 +293,7 @@ for session in range(1, 6):
 	command=' '.join([
 		'heudiconv',
 		'-d', f'"{dataset_path}'+'/sourcedata/{subject}/{session}/*/*dcm"',
-		f"-s {' '.join(subjects[11:30])}",
+		f"-s {' '.join(subjects[120:170])}",
 		'-ss', str(session),
 		'-o', out_dir.as_posix(),
 		'-f', HEURISTIC,
